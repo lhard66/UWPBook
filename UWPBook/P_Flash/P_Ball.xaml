@@ -1,0 +1,105 @@
+﻿<Page
+    x:Class="UWPBook.P_Flash.P_Ball"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWPBook.P_Flash"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <SolidColorBrush x:Name="bgColor" Color="Red"/>
+        
+        <Storyboard x:Name="ball_animation"
+                    Duration="0:0:2.2"
+                    RepeatBehavior="Forever"
+                    AutoReverse="True"
+                    >
+            <!--线性帧，控制小球的top-->
+            <DoubleAnimationUsingKeyFrames
+                Storyboard.TargetName="ball"
+                Storyboard.TargetProperty="(Canvas.Top)">
+                <!-- 0-1秒小球回事下落 -->
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="510">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <!-- 1-1.1秒小球形变 -->
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="520"/>
+                <!-- 1.1-1.2秒小球恢复 -->
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="510"/>
+                <!-- 1.2-2.2秒小球弹起 -->
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="10">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>            
+            <!--线性帧，控制小球的width-->
+            <DoubleAnimationUsingKeyFrames
+                Storyboard.TargetName="ball"
+                Storyboard.TargetProperty="Width"
+                EnableDependentAnimation="True">
+
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="50"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="60">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="50">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="50"/>
+            </DoubleAnimationUsingKeyFrames>
+            <!--线性帧，控制小球的Height-->
+            <DoubleAnimationUsingKeyFrames
+                Storyboard.TargetName="ball"
+                Storyboard.TargetProperty="Height"
+                EnableDependentAnimation="True">
+
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="50"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="40">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="50"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="50"/>
+            </DoubleAnimationUsingKeyFrames>
+            <!--线性帧，控制小球的Left-->
+            <DoubleAnimationUsingKeyFrames
+                Storyboard.TargetName="ball"
+                Storyboard.TargetProperty="(Canvas.Left)"
+                EnableDependentAnimation="True">
+
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="215"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="210">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="215">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="215"/>
+            </DoubleAnimationUsingKeyFrames>
+            <!--控制颜色的变换-->
+            <ColorAnimation Storyboard.TargetName="bgColor"
+                            Storyboard.TargetProperty="Color"
+                            From="Red" To="Black"/>
+        </Storyboard>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Canvas>
+            <Ellipse x:Name="ball" Height="50" Width="50" Canvas.Top="10" Canvas.Left="215" Fill="{StaticResource bgColor}" Stroke="Black"/>
+            <TextBlock Text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" Canvas.Top="548"/>
+        </Canvas>
+    </Grid>
+</Page>

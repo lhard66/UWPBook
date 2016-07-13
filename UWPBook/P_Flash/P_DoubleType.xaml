@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="UWPBook.P_Flash.P_DoubleType"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWPBook.P_Flash"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <Storyboard x:Name="circle_animation" 
+                    Duration="0:0:2"
+                    AutoReverse="True"
+                    RepeatBehavior="Forever"
+                    >
+            <DoubleAnimation Storyboard.TargetName="circle"
+                             Storyboard.TargetProperty="(Canvas.Top)"                             
+                             By="300"  
+                             Duration="0:0:2"
+                             EnableDependentAnimation="True"                             
+                             >
+                             <!--From="10" To="300"-->
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseIn"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+    </Page.Resources>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Canvas>
+            <Ellipse x:Name="circle" Height="50" Width="50" Fill="Yellow" Stroke="Black" Canvas.Left="225" Canvas.Top="10" />
+        </Canvas>
+    </Grid>
+</Page>
