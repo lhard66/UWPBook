@@ -107,6 +107,9 @@
     </Compile>
     <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="P_BackButton\BackButton.xaml.cs">
+      <DependentUpon>BackButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="P_Binding\HeightValueConverter.cs" />
     <Compile Include="P_Binding\P_HeightValueConverter.xaml.cs">
       <DependentUpon>P_HeightValueConverter.xaml</DependentUpon>
@@ -205,6 +208,10 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="P_BackButton\BackButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="P_Binding\P_HeightValueConverter.xaml">
       <SubType>Designer</SubType>

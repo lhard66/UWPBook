@@ -75,7 +75,7 @@ namespace UWPBook
                     // 当导航堆栈尚未还原时，导航到第一页，
                     // 并通过将所需信息作为导航参数传入来配置
                     //FLAG: 参数
-                    rootFrame.Navigate(typeof(P_Calculator_MVVM.P_Calculator), e.Arguments);
+                    rootFrame.Navigate(typeof(P_BackButton.BackButton), e.Arguments);
                 }
                 // 确保当前窗口处于活动状态
                 Window.Current.Activate();
