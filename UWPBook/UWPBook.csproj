@@ -160,6 +160,15 @@
     <Compile Include="P_Navigate\BlankPage3.xaml.cs">
       <DependentUpon>BlankPage3.xaml</DependentUpon>
     </Compile>
+    <Compile Include="P_NavigationStyle\P_RelativePanel.xaml.cs">
+      <DependentUpon>P_RelativePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P_NavigationStyle\P_RelativePanelAdaptDevice.xaml.cs">
+      <DependentUpon>P_RelativePanelAdaptDevice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P_NavigationStyle\P_SplitView.xaml.cs">
+      <DependentUpon>P_SplitView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="P_Resource\P_CssInherit.xaml.cs">
       <DependentUpon>P_CssInherit.xaml</DependentUpon>
     </Compile>
@@ -266,6 +275,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="P_Navigate\BlankPage3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_NavigationStyle\P_RelativePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_NavigationStyle\P_RelativePanelAdaptDevice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_NavigationStyle\P_SplitView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

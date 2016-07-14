@@ -43,10 +43,10 @@ namespace UWPBook
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
 #if DEBUG
-            if (System.Diagnostics.Debugger.IsAttached)
-            {
-                this.DebugSettings.EnableFrameRateCounter = true;
-            }
+            //if (System.Diagnostics.Debugger.IsAttached)
+            //{
+            //    this.DebugSettings.EnableFrameRateCounter = true;
+            //}
 #endif
             Frame rootFrame = Window.Current.Content as Frame;
 
@@ -75,7 +75,7 @@ namespace UWPBook
                     // 当导航堆栈尚未还原时，导航到第一页，
                     // 并通过将所需信息作为导航参数传入来配置
                     //FLAG: 参数
-                    rootFrame.Navigate(typeof(P_BackButton.BackButton), e.Arguments);
+                    rootFrame.Navigate(typeof(P_NavigationStyle.P_RelativePanelAdaptDevice), e.Arguments);
                 }
                 // 确保当前窗口处于活动状态
                 Window.Current.Activate();
